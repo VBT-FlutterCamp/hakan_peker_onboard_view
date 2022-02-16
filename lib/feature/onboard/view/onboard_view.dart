@@ -8,14 +8,14 @@ import '../../../product/widget/elevated_button.dart';
 import '../../login/login_view.dart';
 import '../model/onboard_model.dart';
 
-class OnBoardScreenView extends StatefulWidget {
-  const OnBoardScreenView({Key? key}) : super(key: key);
+class OnboardView extends StatefulWidget {
+  const OnboardView({Key? key}) : super(key: key);
 
   @override
-  _OnBoardScreenViewState createState() => _OnBoardScreenViewState();
+  _OnboardViewState createState() => _OnboardViewState();
 }
 
-class _OnBoardScreenViewState extends State<OnBoardScreenView> {
+class _OnboardViewState extends State<OnboardView> {
   int currentIndex = 0;
   PageController? _controller;
 

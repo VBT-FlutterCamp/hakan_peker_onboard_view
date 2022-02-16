@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onboard_view/feature/onboard/view/onboard_screen_view.dart';
+import 'package:onboard_view/feature/onboard/view/onboard_view.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
         backgroundColor: Theme.of(context).backgroundColor,
       ),
       title: 'Material App',
-      home: OnBoardScreenView(),
+      home: OnboardView(),
     );
   }
 }
