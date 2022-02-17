@@ -82,7 +82,8 @@ class _OnboardViewState extends State<OnboardView> {
 
   Container _mainContainer(BuildContext context, int index) {
     return Container(
-      decoration: BoxDecoration(color: ColorConstants.mainContainerColor, borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40))),
+      decoration: BoxDecoration(
+          color: ColorConstants.mainContainerColor, borderRadius: BorderRadius.only(topLeft: Radius.circular(40), topRight: Radius.circular(40))),
       child: Column(children: [
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -104,10 +105,10 @@ class _OnboardViewState extends State<OnboardView> {
 
   Padding _circleContainer(int index, BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(top: 5),
+      padding:context.verticalPaddingLow,
       child: Container(
-        height: 10,
-        width: 10,
+        height: AppConstants.circleContainerHeight,
+        width: AppConstants.circleContainerWidth,
         margin: AppConstants.containerMargin,
         decoration: BoxDecoration(
           color: currentIndex == index ? ColorConstants.circleContainerColorSelected : ColorConstants.circleContainerColorNotSelected,
@@ -130,7 +131,7 @@ class _OnboardViewState extends State<OnboardView> {
 
   SizedBox _descriptionText(BuildContext context, int index) {
     return SizedBox(
-        height: context.dynamicHeight(0.15),
+        height: context.dynamicHeight(0.16),
         child: Text(
           models[index].description,
           style: Theme.of(context).textTheme.headline5,
@@ -145,9 +146,9 @@ class _OnboardViewState extends State<OnboardView> {
           elevatedButtonText: AppText.skipButton,
           onPressed: () {
             if (currentIndex == models.length - 3) {
-              _controller?.animateToPage(1, duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
+              _controller?.animateToPage(AppConstants.pageNumberOne, duration: AppConstants.buttonDuration, curve: AppConstants.pageCurve);
             } else if (currentIndex == models.length - 2) {
-              _controller?.animateToPage(2, duration: const Duration(milliseconds: 500), curve: Curves.decelerate);
+              _controller?.animateToPage(AppConstants.pageNumberTwo, duration: AppConstants.buttonDuration, curve: AppConstants.pageCurve);
             }
           },
           color: ColorConstants.skipButtonColor,
@@ -163,7 +164,7 @@ class _OnboardViewState extends State<OnboardView> {
                   ));
             }
           },
-          color:ColorConstants.nextButtonColor,
+          color: ColorConstants.nextButtonColor,
         )
       ],
     );
