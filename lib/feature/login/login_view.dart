@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kartal/kartal.dart';
+import 'package:onboard_view/product/components/text/app_text.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -13,11 +14,11 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Login View"),
+        title: Text(AppText.loginText),
       ),
       body: Center(
         child: Container(
-          child: Center(child: Text("LOGIN VIEW",style: Theme.of(context).textTheme.headline4,)),
+          child: Center(child: Text(AppText.loginText.toUpperCase(),style: Theme.of(context).textTheme.headline4,)),
           height: context.dynamicHeight(0.6),
           width: context.dynamicWidth(0.6),
           color: Theme.of(context).backgroundColor,
